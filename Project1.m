@@ -24,6 +24,8 @@ for r = 1:length(a)
     end
 end
 
+% Here is a change
+
 colormap([1 0 0; 1 1 1]);
 image( [-1 1], [-1 1], M)
 axis xy
