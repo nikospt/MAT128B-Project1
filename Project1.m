@@ -50,6 +50,8 @@ for r = 1:100
     end
 end
 
+% this is a test 
+
 colormap([1 0 0; 1 1 1]);
 image( [-1 1], [-1 1], M)
 axis xy
