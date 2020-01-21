@@ -1,8 +1,8 @@
 % MAT 128B: Project 1
 % UC Davis Winter 2020
-% Nikos Trembois and
+% Nikos Trembois, Caitlin Brown, and
 
-%% Fractals 
+%% Fractals
 phi = @(z) z^2;
 fp1 = 0;
 fp2 = 0;
@@ -29,7 +29,7 @@ image( [-1 1], [-1 1], M)
 axis xy
 axis('equal')
 
-%% Fractals 
+%% Fractals
 phi = @(z) z^2 - 1.25;
 fp1 = (1+sqrt(6))/2;
 fp2 = (1-sqrt(6))/2;
