@@ -1,26 +1,70 @@
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{amsath}
+\usepackage[open,openlevel=1]{bookmark}
+\usepackage{amsmath}
 \usepackage{graphicx}
-\usepackage[ruled,vline]{algorithm2e}
+\usepackage[ruled,vlined]{algorithm2e}
 \usepackage{mcode}
+
+% The percent sign indicates comments and does not effect what is written to the pdf
+
+% If you would like to include figures use
+
+% For inline equations, enclose with dollar signs ex. $\frac{1}{2}$
+
+% For equation blocks use \begin{align} ... \end{align} for numbered equations and \begin{align*} \end{align*} for non numbered equations
+
+% To include a figure, you can use the following command, or use it as a template
+% To use this command type "\Figure{filename.png}{figure caption}{figure label}
+
+\newcommand{\Figure}[3]{
+%\Figure{File}{Caption}{Reference}
+\begin{figure}
+\begin{center}
+\includegraphics[width=3.5in]{#1}
+\caption{#2}
+\label{fig:#3}
+\end{center}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% End of Preamble %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Document content start here %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
-\title{Project 1: Fractal Geometry}
-\author{Nikos Trembois}
-\date{}
+\title{Project 1: Fractal Geometry \\ 
+		\large MAT128B Winter 2020}
+\author{Caitlin Brown, Nikos Trembois, and Shuai Zhi}
+\date{February 14, 2020}
 \maketitle
-
+\tableofcontents
 \newpage
 
 \section{Introduction}
-Lets test these changes
 
-Hmmm more testting
+\section{Introduction to Fractals}
+
+\section{Julia Set}
+
+\section{Fractal Dimensions}
+
+\section{Julia Set Connectivity}
+
+\section{Divergent Orbits}
+
+\section{Newton's Method in Complex Plane}
+
+\section{The Mandelbrot Set}
+
 \section{Appendix}
 
 \subsection{Code}
-\lsinputlisting[breaklines=true]{project1.m}
+\lstinputlisting[breaklines=true]{../Code/Project1.m}
 
 \end{document}

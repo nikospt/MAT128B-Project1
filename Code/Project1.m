@@ -1,11 +1,11 @@
 % MAT 128B: Project 1
 % UC Davis Winter 2020
-% Nikos Trembois, Caitlin Brown, and
+% Nikos Trembois, Caitlin Brown, and Shuai Zhi
 
 %% Part 1: Fractals
 phi = @(z) z^2;
-a = linspace(-1,1,500);
-b = linspace(-1,1,500);
+a = linspace(-1,1,100);
+b = linspace(-1,1,100);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -60,3 +60,67 @@ for i = 1:length(c)
 end
 
 %% Part 3: Julia Sets
+
+%% Part 8: Mandelbrot Set
+phi = @(z,c) z^2 + c;
+a = linspace(-1,1,500);
+b = linspace(-1,1,500);
+M = ones(length(a),length(b));
+
+for r = 1:length(a)
+    for i = 1:length(b)
+        clear z;
+        z = 0;
+        c = a(r) + b(i)*1i;
+        for j = 1:100
+            z(j+1) = phi(z(j),c);
+            if abs(z(j+1)) > 2
+                M(r,i) = j;
+                break;
+            end
+        end
+    end
+end
+
+figure(); hold on
+title('Mandelbrot Set')
+xlabel('Real')
+ylabel('Imaginary')
+colormap(jet(100))
+image( [-1 1], [-1 1], M)
+colorbar
+axis xy
+axis([ -1 1 -1 1])
+%% Zoom in 
+% zoom in on a fractal by changing limits
+% Weird it seems to change significantly when using higher resolution in
+% this section from what is shown in the previous plot
+phi = @(z,c) z^2 + c;
+a = linspace(-.8,-.4,500);
+b = linspace(.2,.5,500);
+M = ones(length(a),length(b));
+
+for r = 1:length(a)
+    for i = 1:length(b)
+        clear z;
+        z = 0;
+        c = a(r) + b(i)*1i;
+        for j = 1:100
+            z(j+1) = phi(z(j),c);
+            if abs(z(j+1)) > 2
+                M(r,i) = j;
+                break;
+            end
+        end
+    end
+end
+
+figure(); hold on
+title('Mandelbrot Set')
+xlabel('Real')
+ylabel('Imaginary')
+colormap(jet(100))
+image( [-.7 -.4], [.2 .45], M)
+colorbar
+axis xy
+axis([-.7 -.4 .2 .45])
