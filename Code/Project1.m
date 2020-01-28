@@ -22,10 +22,17 @@ for r = 1:length(a)
     end
 end
 
+figure(); hold on
+title('Filled Julia Set of $\phi = z^2$','Interpreter','Latex')
+xlabel('Real')
+ylabel('Imaginary')
 colormap([1 0 0; 1 1 1]);
 image( [-1 1], [-1 1], M)
 axis xy
 axis('equal')
+axis([ -1 1 -1 1])
+hold off
+saveas(gcf,'../Figures/UnitDisk.png')
 
 %% Part 2:  Fractals
 clear M
@@ -55,6 +62,7 @@ for i = 1:length(c)
     colormap([1 0 0; 1 1 1]);
     image( [-1 1], [-1 1], M{i})
     axis xy
+    axis('equal')
     axis([ -1 1 -1 1])
     hold off
 end
@@ -90,6 +98,7 @@ colormap(jet(100))
 image( [-1 1], [-1 1], M)
 colorbar
 axis xy
+axis('equal')
 axis([ -1 1 -1 1])
 %% Zoom in 
 % zoom in on a fractal by changing limits
@@ -123,4 +132,5 @@ colormap(jet(100))
 image( [-.7 -.4], [.2 .45], M)
 colorbar
 axis xy
+axis('equal')
 axis([-.7 -.4 .2 .45])
