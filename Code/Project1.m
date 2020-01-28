@@ -4,8 +4,8 @@
 
 %% Part 1: Fractals
 phi = @(z) z^2;
-a = linspace(-1,1,100);
-b = linspace(-1,1,100);
+a = linspace(-1,1,500);
+b = linspace(-1,1,500);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -36,10 +36,10 @@ saveas(gcf,'../Figures/UnitDisk.png')
 
 %% Part 2:  Fractals
 clear M
-phi = @(z,c) z^2 - c;
+phi = @(z,c) z^2 + c;
 a = linspace(-1,1,100);
 b = linspace(-1,1,100);
-c = [0.36 + 0.1i, -.123 - .745i];
+c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i];
 for k = 1:length(c)
     M{k} = ones(length(a),length(b));
     for r = 1:length(a)
@@ -68,6 +68,14 @@ for i = 1:length(c)
 end
 
 %% Part 3: Julia Sets
+
+%% Part 4: Computing the Fractal Dimension
+
+%% Part 5: Connectivity of the Julia Set
+
+%% Part 6: Coloring Divergent Orbits
+
+%% Part 7: Newton's Method in the Complex Plane
 
 %% Part 8: Mandelbrot Set
 phi = @(z,c) z^2 + c;
@@ -100,7 +108,7 @@ colorbar
 axis xy
 axis('equal')
 axis([ -1 1 -1 1])
-%% Zoom in 
+%% Part 8 (cont) Zoom in 
 % zoom in on a fractal by changing limits
 % Weird it seems to change significantly when using higher resolution in
 % this section from what is shown in the previous plot
