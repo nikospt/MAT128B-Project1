@@ -2,15 +2,11 @@
 % UC Davis Winter 2020
 % Nikos Trembois, Caitlin Brown, and Shuai Zhi
 
-%% Julia
-julia(0,0,500,-1.25,3,3)
-
 %% Part 1: Fractals
 phi = @(z) z^2;
 a = linspace(-1,1,500);
 b = linspace(-1,1,500);
 M = ones(length(a),length(b));
-tic
 for r = 1:length(a)
     for i = 1:length(b)
         clear z;
@@ -24,7 +20,6 @@ for r = 1:length(a)
         end
     end
 end
-toc
 
 figure(); hold on
 title('Filled Julia Set of $\phi = z^2$','Fontsize',16,'Interpreter','Latex')
@@ -66,25 +61,13 @@ for k = 1:length(c)
 end
 
 
-N=0; % Initialize value of N for box-counting
-n = 500;
-r = .02;
-for i = 1:n
-    for j = 1:n
-        if M{end}(i,j) == 1
-            N = N+1;
-        end
-    end
-end
-d = log(N)/log(1/r)
+FractalDimension(M{end},.02)
 
 for i = 1:length(c)
     figure(); hold on
     colormap([1 0 0; 1 1 1]);
     image( [rl ru], [il iu], M{i})
     axis xy
-    %axis('equal')
-    %axis([ -1 1 -1 1])
     hold off
 end
 
@@ -193,7 +176,6 @@ image( [min(a) max(a)], [min(b) max(b)], M)
 colorbar
 axis xy
 axis('equal')
-%axis([-.7 -.4 .2 .45])
 
 %% Functions
 function [result] = R(x,y)
@@ -215,24 +197,16 @@ function [result] = T(x,y)
     result = t;
 end
 
-function julia( cx, cy, m, c, l, n )
-xaxis=0;
-yaxis=0;
-l=1.5;
-x=linspace(cx-l,cx+l,m);
-y=linspace(cy-l,cy+l,m);
-[X,Y]=meshgrid(x,y);
-Z=X+1i*Y;
-%Z=r*(cos(ceta)+1i*sin(ceta));
-%r=sqrt(X^2+Y^2);
-%ceta=arctan(Y./X) ;
-for k=1:n;
-Z=Z.^2+c;
-W=exp(-abs(Z));
-end
-
-colormap prism(256)
-pcolor(W);
-shading flat;
-axis('square','equal','off');
+function FractalDimension(M,r)
+    n = length(M);
+    N = 0; % Initialize value of N for box-counting
+    for i = 1:n
+        for j = 1:n
+            if M(i,j) == 1
+                N = N+1;
+            end
+        end
+    end
+    d = log(N)/log(1/r);
+    fprintf('The fractal dimension is %5.4f\n', d);
 end
