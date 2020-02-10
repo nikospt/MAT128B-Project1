@@ -8,15 +8,17 @@ program Project
     real :: xl, yl, xu, yu
     character (len = 10) :: fname1
     character (len = 350) :: sysin
-    character (len = 350) :: sysin1 sysin2 sysin3
+    character (len = 350) :: sysin1, sysin2, sysin3
     character (len = 3) :: test
     fname1 = "data1.dat"
 
-    write(test, *) ymax/2
+    ! Wow this worked !!!! 
+    write(test, '(I3.0)') ymax/2
     sysin2 = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
             set key off; unset colorbox; set size ratio -1; &
             set palette maxcolors 2; set palette defined (1 \"#FF0000\", 2 \"#FFFFFF\"); &
             plot \"data1.dat\" using ((\$1-'//test//')/'//test//'):((\$2-'//test//')/'//test//'):3 matrix with image"'
+    write(*,*) sysin2
 
     call cpu_time(start_time)
     xl = -1.0
