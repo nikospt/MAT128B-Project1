@@ -107,7 +107,7 @@ end
 
 %% Part 6: Coloring Divergent Orbits
 
-%% Part 7: Newton's Method in the Complex Plane'
+%% Part 7: Newton's Method in the Complex Plane
 
 %% Part 8: Mandelbrot Set
 
@@ -177,7 +177,7 @@ axis xy
 axis('equal')
 %axis([-.7 -.4 .2 .45])
 
-%% Functions 
+%% Functions
 function [result] = R(x,y)
     result = sqrt(x^2 + y^2);
 end
