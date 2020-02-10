@@ -1,0 +1,76 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[open,openlevel=1]{bookmark}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[ruled,vlined]{algorithm2e}
+\usepackage{mcode}
+
+% The percent sign indicates comments and does not effect what is written to the pdf
+
+% If you would like to include figures use
+
+% For inline equations, enclose with dollar signs ex. $\frac{1}{2}$
+
+% For equation blocks use \begin{align} ... \end{align} for numbered equations and \begin{align*} \end{align*} for non numbered equations
+
+% To include a figure, you can use the following command, or use it as a template
+% To use this command type "\Figure{filename.png}{figure caption}{figure label}
+
+\newcommand{\Figure}[3]{
+%\Figure{File}{Caption}{Reference}
+\begin{figure}[h]
+\begin{center}
+\includegraphics[width=3.5in]{#1}
+\caption{#2}
+\label{fig:#3}
+\end{center}
+\end{figure}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% End of Preamble %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%% Document content start here %%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title{Project 1: Fractal Geometry \\ 
+		\large MAT128B Winter 2020}
+\author{Caitlin Brown, Nikos Trembois, and Shuai Zhi}
+\date{February 14, 2020}
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Introduction}
+In this project, numerical analysis, with the help of computers, is used to understand and demonstrate fractals and their characteristics. The fractals will be generated using orbits of complex numbers. Orbits are the process of applying a function to the output of the same function over and over, like a recursive function. It is not hard to imagine that certain initial values will produce diverging results while other will converge, or at least remain bounded by some value. The filled Julia set is all points whose orbit, using a polynomial function, remains bounded. The boundary of the filled set is called the Julia set.
+
+\section{Introduction to Fractals}
+The orbit of complex values whose real and imaginary part were within [-1, 1] were calculated for the function $\phi(z) = z^2$. In figure \ref{fig:unitDisk}, it is evident that the function $\phi = z^2$ maps the unit disk. The filled Julia set orbit of all points $z = a + ib$, where $a = [-1,1]$ and $b = [-1,1]$ under $\phi(z) = z^2$ creates the unit disk. Likewise, the Julia set under the same conditions would create the unit circle. 
+
+\Figure{../Figures/UnitDisk.png}{Orbit of z under $\phi=z^2$}{fig:unitDisk}
+
+\section{Julia Set}
+
+\section{Fractal Dimensions}
+
+\section{Julia Set Connectivity}
+
+\section{Divergent Orbits}
+
+\section{Newton's Method in Complex Plane}
+
+\section{The Mandelbrot Set}
+
+\section{Conclusion}
+
+\section{Appendix}
+
+\subsection{Code}
+\lstinputlisting[breaklines=true]{../Code/Project1.m}
+
+\end{document}
