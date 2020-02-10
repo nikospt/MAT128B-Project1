@@ -9,16 +9,18 @@ program Project
     character (len = 10) :: fname1
     character (len = 350) :: sysin
     character (len = 350) :: sysin1, sysin2, sysin3
-    character (len = 3) :: test
+    character (len = 4) :: test
     fname1 = "data1.dat"
 
-    ! Wow this worked !!!! 
-    write(test, '(I3.0)') ymax/2
-    sysin2 = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
+    ! The 3 is the number of digits of result and may need to be changed if you increase ymax sufficiently
+    write(test, '(I3)') ymax/2
+
+    sysin = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
             set key off; unset colorbox; set size ratio -1; &
             set palette maxcolors 2; set palette defined (1 \"#FF0000\", 2 \"#FFFFFF\"); &
-            plot \"data1.dat\" using ((\$1-'//test//')/'//test//'):((\$2-'//test//')/'//test//'):3 matrix with image"'
-    write(*,*) sysin2
+            plot \"data1.dat\" using ((\$1-'//trim(test)//')/'//trim(test)//'):((\$2-'//trim(test)// &
+            ')/'//trim(test)//'):3 matrix with image"'
+    write(*,*) sysin
 
     call cpu_time(start_time)
     xl = -1.0
@@ -29,12 +31,13 @@ program Project
 
     call cpu_time(end_time)
     write(*,*) "Process took ", end_time-start_time, "seconds"
-
-    sysin = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
-            set key off; unset colorbox; set size ratio -1; &
-            set palette maxcolors 2; set palette defined (1 \"#FF0000\", 2 \"#FFFFFF\"); &
-            plot \"data1.dat\" using ((\$1-250)/250):((\$2-250)/250):3 matrix with image"'
     call system(sysin)
+
+    ! Probabley can get rid of this
+    ! sysin = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
+    !         set key off; unset colorbox; set size ratio -1; &
+    !         set palette maxcolors 2; set palette defined (1 \"#FF0000\", 2 \"#FFFFFF\"); &
+    !         plot \"data1.dat\" using ((\$1-250)/250):((\$2-250)/250):3 matrix with image"'
 
 contains
 

@@ -2,12 +2,15 @@
 % UC Davis Winter 2020
 % Nikos Trembois, Caitlin Brown, and Shuai Zhi
 
+%% Julia
+julia(0,0,500,-1.25,3,3)
+
 %% Part 1: Fractals
 phi = @(z) z^2;
 a = linspace(-1,1,500);
 b = linspace(-1,1,500);
 M = ones(length(a),length(b));
-
+tic
 for r = 1:length(a)
     for i = 1:length(b)
         clear z;
@@ -21,6 +24,7 @@ for r = 1:length(a)
         end
     end
 end
+toc
 
 figure(); hold on
 title('Filled Julia Set of $\phi = z^2$','Fontsize',16,'Interpreter','Latex')
@@ -41,7 +45,8 @@ rl = -1.6; ru = -rl;
 il = -.7;  iu = -il;
 a = linspace(rl,ru,500);
 b = linspace(il,iu,500);
-c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i]; % c = -1.25
+%c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i, -1.25]; % 
+c = -1.25;
 M = cell(length(c),1);
 for k = 1:length(c)
     M{k} = ones(length(a),length(b));
@@ -60,21 +65,34 @@ for k = 1:length(c)
     end
 end
 
+
+N=0; % Initialize value of N for box-counting
+n = 500;
+r = .02;
+for i = 1:n
+    for j = 1:n
+        if M{end}(i,j) == 1
+            N = N+1;
+        end
+    end
+end
+d = log(N)/log(1/r)
+
 for i = 1:length(c)
     figure(); hold on
     colormap([1 0 0; 1 1 1]);
     image( [rl ru], [il iu], M{i})
     axis xy
-    axis('equal')
+    %axis('equal')
     %axis([ -1 1 -1 1])
     hold off
 end
 
 %% Part 3: Julia Sets
 psi = @(z,c) sqrt(z - c);
-x = zeros(500,4);
-y = zeros(500,4);
-c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i];
+x = zeros(100,4);
+y = zeros(100,4);
+c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i, -1.25];
 for k = 1:length(c)
     clear z;
     z = c(k);
@@ -123,7 +141,7 @@ for r = 1:length(a)
         c = a(r) + b(i)*1i;
         for j = 1:100
             z(j+1) = phi(z(j),c);
-            if abs(z(j+1)) > 2
+            if abs(z(j+1)) > 100
                 M(r,i) = j;
                 break;
             end
@@ -195,4 +213,26 @@ function [result] = T(x,y)
         t = atan(y/x) + pi;
     end
     result = t;
+end
+
+function julia( cx, cy, m, c, l, n )
+xaxis=0;
+yaxis=0;
+l=1.5;
+x=linspace(cx-l,cx+l,m);
+y=linspace(cy-l,cy+l,m);
+[X,Y]=meshgrid(x,y);
+Z=X+1i*Y;
+%Z=r*(cos(ceta)+1i*sin(ceta));
+%r=sqrt(X^2+Y^2);
+%ceta=arctan(Y./X) ;
+for k=1:n;
+Z=Z.^2+c;
+W=exp(-abs(Z));
+end
+
+colormap prism(256)
+pcolor(W);
+shading flat;
+axis('square','equal','off');
 end
