@@ -4,8 +4,8 @@
 
 %% Part 1: Fractals
 phi = @(z) z^2;
-a = linspace(-1,1,100);
-b = linspace(-1,1,100);
+a = linspace(-1,1,500);
+b = linspace(-1,1,500);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -39,8 +39,8 @@ clear M
 phi = @(z,c) z^2 + c;
 rl = -1.6; ru = -rl;
 il = -.7;  iu = -il;
-a = linspace(rl,ru,100);
-b = linspace(il,iu,100);
+a = linspace(rl,ru,500);
+b = linspace(il,iu,500);
 c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i]; % c = -1.25
 M = cell(length(c),1);
 for k = 1:length(c)
@@ -72,8 +72,8 @@ end
 
 %% Part 3: Julia Sets
 psi = @(z,c) sqrt(z - c);
-x = zeros(100,4);
-y = zeros(100,4);
+x = zeros(500,4);
+y = zeros(500,4);
 c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i];
 for k = 1:length(c)
     clear z;
@@ -107,9 +107,10 @@ end
 
 %% Part 6: Coloring Divergent Orbits
 
-%% Part 7: Newton's Method in the Complex Plane
+%% Part 7: Newton's Method in the Complex Plane'
 
 %% Part 8: Mandelbrot Set
+
 phi = @(z,c) z^2 + c;
 a = linspace(-1,1,500);
 b = linspace(-1,1,500);
@@ -140,13 +141,14 @@ colorbar
 axis xy
 axis('equal')
 axis([ -1 1 -1 1])
-%% Part 8 (cont) Zoom in 
+%% Part 8 (cont) Zoom in
 % zoom in on a fractal by changing limits
 % Weird it seems to change significantly when using higher resolution in
 % this section from what is shown in the previous plot
 phi = @(z,c) z^2 + c;
-a = linspace(-.8,-.4,500);
-b = linspace(.2,.5,500);
+a = linspace(-1,-.8,500);
+b = linspace(0,-.2,500);
+clear M;
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -169,13 +171,13 @@ title('Mandelbrot Set')
 xlabel('Real')
 ylabel('Imaginary')
 colormap(jet(100))
-image( [-.7 -.4], [.2 .45], M)
+image( [min(a) max(a)], [min(b) max(b)], M)
 colorbar
 axis xy
 axis('equal')
-axis([-.7 -.4 .2 .45])
+%axis([-.7 -.4 .2 .45])
 
-
+%% Functions 
 function [result] = R(x,y)
     result = sqrt(x^2 + y^2);
 end
@@ -186,9 +188,9 @@ function [result] = T(x,y)
     elseif x == 0
         if y > 0
             t = pi/2;
-        else 
+        else
             t = 3*pi/2;
-        end   
+        end
     else
         t = atan(y/x) + pi;
     end
