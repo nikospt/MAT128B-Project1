@@ -1,53 +1,30 @@
 program Project
-    implicit none
-    use mpi
-
-    integer ierr
-    integer id
-    integer num_procs
 
     integer :: xmax, ymax
     parameter (xmax = 500)
     parameter (ymax = 500)
-    real :: x(xmax)
-    real :: y(ymax)
-    real :: x2(xmax), y2(ymax)
-    real :: M(xmax,ymax)
-    real :: T(xmax,ymax)
-    integer :: i,j,k,indx1,indy1,indx2,indy2
-    complex :: a
-    character (len = 10) :: fname1,fname2
-
-    call MPI_Init ( ierr )
-    call MPI_Comm_rank (MPI_COMM_WORLD, id, ierr)
-
-    write(*,*) "The number of processes are ", num_procs
-
+    real :: start_time
+    real :: end_time
+    real :: xl, yl, xu, yu
+    character (len = 10) :: fname1
+    character (len = 350) :: sysin
     fname1 = "data1.dat"
-    fname2 = "data2.dat"
 
-    call linspace(-1.0,1.0,x)
-    call linspace(-1.0,1.0,y)
+    call cpu_time(start_time)
+    xl = -1.0
+    xu = 1.0
+    yl = -1.0
+    yu = 1.0
+    call iterate(xl,xu,yl,yu,phi,fname1)
 
-    do i = 1,4
-        if ( id == (i-1) )
-            indx1 = (i-1)*xmax/4 + 1
-            indx2 = indx1 + xmax - 1
-            indy1 = (i-1)*ymax/4 + 1
-            indy2 = indy1 + ymax - 1
-            call iterate(x(indx1:indx2),y(indy1:indy2),phi,fname1,M(indx1:indx2,indy1:indy2)))
-        end if
-    end do
+    call cpu_time(end_time)
+    write(*,*) "Process took ", end_time-start_time, "seconds"
 
-    call MPI_Finalize ( ierr )
-
-    ! call linspace(-1.0,1.0,x)
-    ! call linspace(-1.0,1.0,y)
-    ! call linspace(-1.8,1.8,x2)
-    ! call linspace(-0.7,0.7,y2)
-    !
-    ! call iterate(x,y,phi,fname1,M)
-    ! call iterate(x2,y2,phi2,fname2,T)
+    sysin = 'gnuplot -e "reset; set terminal png; set output \"test.png\"; set xrange [-1:1]; set yrange [-1:1]; &
+            set key off; unset colorbox; set size ratio -1; &
+            set palette maxcolors 2; set palette defined (1 \"#FF0000\", 2 \"#FFFFFF\"); &
+            plot \"data1.dat\" using ((\$1-250)/250):((\$2-250)/250):3 matrix with image"'
+    call system(sysin)
 
 contains
 
@@ -72,12 +49,19 @@ contains
         end do
     end subroutine linspace
 
-    subroutine iterate(x,y,phi,filename,M)
-        real, intent(in) :: x(:), y(:)
-        complex :: phi
+    subroutine iterate(xl,xu,yl,yu,phi,filename)
         character(len=10) :: filename
-        real, intent(out) :: M(:,:)
+        real, intent(in) :: xl, xu, yl, yu
+        real :: x(xmax), y(ymax)
+        real :: M(xmax,ymax)
+        real :: recc(100,500)
+        complex :: phi
         complex :: a
+        integer :: i, j, k
+
+        call linspace(xl,xu,x)
+        call linspace(yl,yu,y)
+        !$OMP DO
         do i = 1, xmax
             do j = 1, ymax
                 M(i,j) = 1
@@ -90,11 +74,14 @@ contains
                 end do
             end do
         end do
+        !$OMP END DO
+
         open (unit = 8, file=filename)
         do i = 1,xmax
             write(8,*) (M(i,j),j=1,ymax)
         end do
         close(8)
+
     end subroutine iterate
 
     complex function phi(z)
