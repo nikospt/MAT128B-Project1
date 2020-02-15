@@ -1,0 +1,21 @@
+1. Report format and length
+ - about 10 pages with figures excluding the code
+
+2. Why use polar coordintes
+ - euller notation makes square root faster
+
+3. Newton’s Method
+
+4. Why our plots seem to be slightly off
+
+5. Should we color plots as red/white, or colored by the iteration number (for question that dont specify)
+ - only color for the ones that specify
+
+6. how to show evidence of github
+ - he wanted to see either branches or the list of commits. So try to use git to commit your changes so those show up, otherwise we can just say that we shard work via email
+
+7. whats the format for showing work distribution
+ - a table that shows the work each person did should be fine
+
+8. fixed points
+ - dont worry about the book example that uses fixed points in convergence, we are not doing that
