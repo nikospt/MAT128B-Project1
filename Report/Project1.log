@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  15 FEB 2020 16:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  15 FEB 2020 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -607,53 +607,51 @@ Package caption Info: End \AtBeginDocument code.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: Reference `fig:unitDisk' on page 2 undefined on input line 54.
-
-<../Figures/UnitDisk.png, id=37, 562.2606pt x 421.575pt>
+<../Figures/UnitDisk.png, id=38, 562.2606pt x 421.575pt>
 File: ../Figures/UnitDisk.png Graphic file (type png)
 <use ../Figures/UnitDisk.png>
 Package pdftex.def Info: ../Figures/UnitDisk.png  used on input line 56.
 (pdftex.def)             Requested size: 252.94499pt x 189.65553pt.
-<../Figures/FilledJulia1.png, id=38, 562.2606pt x 421.575pt>
+ [2 <../Figures/UnitDisk.png (PNG copy)>]
+<../Figures/FilledJulia1.png, id=46, 562.2606pt x 421.575pt>
 File: ../Figures/FilledJulia1.png Graphic file (type png)
 <use ../Figures/FilledJulia1.png>
 Package pdftex.def Info: ../Figures/FilledJulia1.png  used on input line 63.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/FilledJulia2.png, id=39, 562.2606pt x 421.575pt>
+<../Figures/FilledJulia2.png, id=47, 562.2606pt x 421.575pt>
 File: ../Figures/FilledJulia2.png Graphic file (type png)
 <use ../Figures/FilledJulia2.png>
 Package pdftex.def Info: ../Figures/FilledJulia2.png  used on input line 68.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/FilledJulia3.png, id=40, 562.2606pt x 421.575pt>
+<../Figures/FilledJulia3.png, id=48, 562.2606pt x 421.575pt>
 File: ../Figures/FilledJulia3.png Graphic file (type png)
 <use ../Figures/FilledJulia3.png>
 Package pdftex.def Info: ../Figures/FilledJulia3.png  used on input line 76.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/FilledJulia4.png, id=41, 562.2606pt x 421.575pt>
+<../Figures/FilledJulia4.png, id=49, 562.2606pt x 421.575pt>
 File: ../Figures/FilledJulia4.png Graphic file (type png)
 <use ../Figures/FilledJulia4.png>
 Package pdftex.def Info: ../Figures/FilledJulia4.png  used on input line 81.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-[2 <../Figures/UnitDisk.png (PNG copy)>] [3 <../Figures/FilledJulia1.png (PNG c
-opy)> <../Figures/FilledJulia2.png (PNG copy)> <../Figures/FilledJulia3.png (PN
-G copy)> <../Figures/FilledJulia4.png (PNG copy)>]
-<../Figures/Newton1.png, id=59, 562.2606pt x 421.575pt>
+ [3 <../Figures/FilledJulia1.png (PNG copy)> <../Figures/FilledJulia2.png (PNG 
+copy)> <../Figures/FilledJulia3.png (PNG copy)> <../Figures/FilledJulia4.png (P
+NG copy)>]
+<../Figures/Newton1.png, id=60, 562.2606pt x 421.575pt>
 File: ../Figures/Newton1.png Graphic file (type png)
 <use ../Figures/Newton1.png>
 Package pdftex.def Info: ../Figures/Newton1.png  used on input line 105.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/Newton2.png, id=60, 562.2606pt x 421.575pt>
+<../Figures/Newton2.png, id=61, 562.2606pt x 421.575pt>
 File: ../Figures/Newton2.png Graphic file (type png)
 <use ../Figures/Newton2.png>
 Package pdftex.def Info: ../Figures/Newton2.png  used on input line 110.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/Newton3.png, id=61, 562.2606pt x 421.575pt>
+<../Figures/Newton3.png, id=62, 562.2606pt x 421.575pt>
 File: ../Figures/Newton3.png Graphic file (type png)
 <use ../Figures/Newton3.png>
 Package pdftex.def Info: ../Figures/Newton3.png  used on input line 118.
 (pdftex.def)             Requested size: 176.40198pt x 132.26291pt.
-<../Figures/Newton4.png, id=62, 562.2606pt x 421.575pt>
+<../Figures/Newton4.png, id=63, 562.2606pt x 421.575pt>
 File: ../Figures/Newton4.png Graphic file (type png)
 <use ../Figures/Newton4.png>
 Package pdftex.def Info: ../Figures/Newton4.png  used on input line 123.
@@ -669,24 +667,24 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 (../Code/Project1.m [4] [5 <../Figures/Newton1.png (PNG copy)> <../Figures/Newt
 on2.png (PNG copy)> <../Figures/Newton3.png (PNG copy)> <../Figures/Newton4.png
  (PNG copy)>]
-LaTeX Font Info:    Try loading font information for TS1+pcr on input line 11.
+LaTeX Font Info:    Try loading font information for TS1+pcr on input line 14.
  (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
 )
-LaTeX Font Info:    Try loading font information for OMS+pcr on input line 11.
+LaTeX Font Info:    Try loading font information for OMS+pcr on input line 14.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
-LaTeX Font Info:    Try loading font information for OML+pcr on input line 34.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 14.
+LaTeX Font Info:    Try loading font information for OML+pcr on input line 36.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 34.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 36.
  [6] [7]
 [8] [9] [10] [11])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 140.
@@ -695,20 +693,16 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 140.
  (./Project1.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 140.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 140.
-
-
-LaTeX Warning: There were undefined references.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 140.
  ) 
 Here is how much of TeX's memory you used:
  11194 strings out of 492616
- 166191 string characters out of 6129482
+ 166184 string characters out of 6129482
  394684 words of memory out of 5000000
  14611 multiletter control sequences out of 15000+600000
  12099 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,8n,42p,1391b,1891s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,8n,42p,1391b,1897s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
 xlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/tex
@@ -724,10 +718,10 @@ ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2019/texmf-dist/f
 onts/type1/urw/courier/ucrr8a.pfb>
-Output written on Project1.pdf (12 pages, 645373 bytes).
+Output written on Project1.pdf (12 pages, 646421 bytes).
 PDF statistics:
- 597 PDF objects out of 1000 (max. 8388607)
- 554 compressed objects within 6 object streams
+ 598 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
  359 named destinations out of 1000 (max. 500000)
  134 words of extra memory for PDF output out of 10000 (max. 10000000)
 

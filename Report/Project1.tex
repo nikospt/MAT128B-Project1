@@ -48,14 +48,14 @@
 \newpage
 
 \section{Introduction}
-In this project, numerical analysis, with the help of computers, is used to understand and demonstrate fractals and their characteristics. The fractals will be generated using orbits of complex numbers. Orbits are the process of applying a function to the output of the same function over and over, like a recursive function. It is not hard to imagine that certain initial values will produce diverging results while other will converge, or at least remain bounded by some value. The filled Julia set is all points whose orbit, using a polynomial function, remains bounded. The boundary of the filled set is called the Julia set.
+In this project, numerical analysis is used to understand and demonstrate fractals and their characteristics. The fractals will be generated from the orbits of complex functions. Orbits are the sequence of numbers that results from the process of applying a function to the output of the same function over and over, like a recursive function. So $orb(z_0) = z_0, z_1 = \phi(z_0), z_2 \phi(\phi(z_0)) ...$ is the orbit of the initial point $z_0$ under the function $\phi$. It is not hard to imagine that for certain initial values this process will diverge while other initial values will converge, or at least remain bounded by some value. The filled Julia set is all points whose orbit, using a polynomial function, remains bounded. The boundary of the filled set is called the Julia set.
 
 \section{Introduction to Fractals}
-The orbit of complex values whose real and imaginary part were within [-1, 1] were calculated for the function $\phi(z) = z^2$. In figure \ref{fig:unitDisk}, it is evident that the function $\phi = z^2$ maps the unit disk. The filled Julia set orbit of all points $z = a + ib$, where $a = [-1,1]$ and $b = [-1,1]$ under $\phi(z) = z^2$ creates the unit disk. Likewise, the Julia set under the same conditions would create the unit circle. 
+The orbit of complex values whose real and imaginary part were within [-1, 1] were calculated for the function $\phi(z) = z^2$. The filled Julia set of $\phi(z) = z^2$, shown in figure \ref{fig:unitDisk}, shows the map the orbit, which is the unit disk. Under the same conditions the Julia set would create the unit circle, as it is the boundary of the filled Julia set. 
 
-\Figure{../Figures/UnitDisk.png}{Orbit of z under $\phi=z^2$}{fig:unitDisk}
+\Figure{../Figures/UnitDisk.png}{Orbit of z under $\phi=z^2$}{unitDisk}
 
-By adding a constant to the function, fractals occur. 
+By adding a constant to the function (i.e. $\phi(z) = z^2 + c$) the map of the orbit becomes more complex shapes, which turn out to be fractals. 
 
 \begin{figure}
 \centering

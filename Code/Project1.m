@@ -2,11 +2,15 @@
 % UC Davis Winter 2020
 % Nikos Trembois, Caitlin Brown, and Shuai Zhi
 
-global c
+global c xRange yRange pts bsave
 c = [0.36 + 0.1i, -.123 - .745i,-.749, -1.25];
+xRange = [1, 1, 1, 1];
+yRange = [1, 1, 1, 1];
+pts = 100;
+bsave = 0;
 
 %% Part 1: Fractals
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2;
 M = FilledJuliaSet(phi,1,1,100,0);
 
@@ -20,10 +24,12 @@ axis xy
 axis equal
 axis([ -1 1 -1 1])
 hold off
-saveas(gcf,'../Figures/UnitDisk.png')
+if bsave == 1
+    saveas(gcf,'../Figures/UnitDisk.png')
+end
 
 %% Part 2:  Fractals
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2 + c;
 xrange = 2; yrange = 2;
 M = cell(length(c),1);
@@ -34,11 +40,11 @@ end
 for i = 1:length(c)
     figure(); hold on
     if (real(c(i) > 0 ))
-        titles = strcat('Julia Set of $z^2 + ',num2str(c(i)),'$');
+        stitle = strcat('Filled Julia Set of $z^2 + ',num2str(c(i)),'$');
     else
-        titles = strcat('Julia Set of $z^2 ',num2str(c(i)),'$');
+        stitle = strcat('Filled Julia Set of $z^2 ',num2str(c(i)),'$');
     end
-    title(titles,'Interpreter','Latex','FontSize',24)
+    title(stitle,'Interpreter','Latex','FontSize',24)
     colormap([1 0 0; 1 1 1]);
     image( [-xrange xrange], [-yrange yrange], M{i}')
     axis xy
@@ -49,12 +55,14 @@ for i = 1:length(c)
     xlabel('\Re','Fontsize',18)
     ylabel('\Im','Fontsize',18)
     hold off
-    ssave = strcat('../Figures/FilledJulia',num2str(i),'.png');
-    saveas(gcf,ssave)
+    if bsave == 1
+        ssave = strcat('../Figures/FilledJulia',num2str(i),'.png');
+        saveas(gcf,ssave)
+    end
 end
 
 %% Part 3: Julia Sets
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 psi = @(z,c) sqrt(z - c);
 x = zeros(100,4);
 y = zeros(100,4);
@@ -75,11 +83,11 @@ end
 for i = 1:length(c)
     figure(); hold on
     if (real(c(i) > 0 ))
-        titles = strcat('Julia Set of $z^2 + ',num2str(c(i)),'$');
+        stitle = strcat('Julia Set of $z^2 + ',num2str(c(i)),'$');
     else
-        titles = strcat('Julia Set of $z^2 ',num2str(c(i)),'$');
+        stitle = strcat('Julia Set of $z^2 ',num2str(c(i)),'$');
     end
-    title(titles,'Interpreter','Latex','FontSize',24) 
+    title(stitle,'Interpreter','Latex','FontSize',24) 
     scatter(x(:,i),y(:,i),'filled')
     ax = gca;
     plot(ax.XLim,[0,0],'LineStyle','--','Color',[.5,.5,.5])
@@ -87,8 +95,10 @@ for i = 1:length(c)
     xlabel('\Re','Fontsize',18)
     ylabel('\Im','Fontsize',18)
     hold off
-    ssave = strcat('../Figures/Julia',num2str(i),'.png');
-    saveas(gcf,ssave)
+    if bsave == 1
+        ssave = strcat('../Figures/Julia',num2str(i),'.png');
+        saveas(gcf,ssave)
+    end
 end
 
 %% Part 4: Computing the Fractal Dimension
@@ -96,7 +106,7 @@ end
 % FractalDimension(M{end},.02)
 
 %% Part 5: Connectivity of the Julia Set
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 psi = @(z) z^2 + 3;
 z = 0;
 max_iter = 1000;
@@ -114,7 +124,7 @@ end
     
 
 %% Part 6: Coloring Divergent Orbits
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2 - c;
 rl = -1; ru = -rl; %1.6
 il = -1;  iu = -il; %.7
@@ -152,12 +162,14 @@ for i = 1:length(c)
     colormap(jet(max(max(M{i}))))
     colorbar
     hold off
-    ssave = strcat('../Figures/ColoredJulia',num2str(i),'.png');
-    saveas(gcf,ssave)
+    if bsave == 1
+        ssave = strcat('../Figures/ColoredJulia',num2str(i),'.png');
+        saveas(gcf,ssave)
+    end
 end
 
 %% Part 7: Newton's Method in the Complex Plane
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 g = @(z,n) (z^n - 1)/(n*z^(n-1));
 a = linspace(-5,5,500);
 b = linspace(-5,5,500);
@@ -200,16 +212,18 @@ for i = 1:nmax-1
     xlabel('\Re','Fontsize',18)
     ylabel('\Im','Fontsize',18)
     hold off
-    ssave = strcat('../Figures/Newton',num2str(i),'.png');
-    saveas(gcf,ssave)
+    if bsave == 1
+        ssave = strcat('../Figures/Newton',num2str(i),'.png');
+        saveas(gcf,ssave)
+    end
 end
     
 
 %% Part 8: Mandelbrot Set
-clearvars -except c
+clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2 + c;
-a = linspace(-1,1,100);
-b = linspace(-1,1,100);
+a = linspace(-1,1,500);
+b = linspace(-1,1,500);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -237,15 +251,15 @@ colorbar
 axis xy
 axis('equal')
 axis([ -1 1 -1 1])
-saveas(gcf,'../Figures/Madelbrot.png')
+if bsave == 1
+    saveas(gcf,'../Figures/Madelbrot.png')
+end
 %% Part 8 (cont) Zoom in
 % zoom in on a fractal by changing limits
-% Weird it seems to change significantly when using higher resolution in
-% this section from what is shown in the previous plot
-phi = @(z,c) z^2 + c;
-a = linspace(-1,-.8,100);
-b = linspace(0,-.2,100);
 clear M;
+phi = @(z,c) z^2 + c;
+a = linspace(-.3,0.05,500);
+b = linspace(0.6,1,500);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -307,6 +321,7 @@ function FractalDimension(M,r)
     fprintf('The fractal dimension is %5.4f\n', d);
 end
 
+% This function determines if a point is in a Julia Set
 function [ M ] = FilledJuliaSet(phi, xrange, yrange, pts, c)
     a = linspace(-xrange, xrange, pts);
     b = linspace(-yrange, yrange, pts);
@@ -321,6 +336,38 @@ function [ M ] = FilledJuliaSet(phi, xrange, yrange, pts, c)
                     if abs( z(j+1) ) > 2
                         M(r,i) = 2;
                         break;
+                    end
+                end
+            end
+        end
+    end
+end
+
+% This function determines if a point is in a Julia Set
+function [ M ] = FilledJuliaSet2(phi, xrange, yrange, pts, c, colored, maxvalue)
+    a = linspace(-xrange, xrange, pts);
+    b = linspace(-yrange, yrange, pts);
+    for k = 1:length(c)
+        M = ones(length(a), length(b));
+        for r = 1:length(a)
+            for i = 1:length(b)
+                clear z;
+                z = a(r) + 1i*b(i);
+                for j = 1:100
+                    z(j+1) = phi( z(j), c(k) );
+                    if abs( z(j+1) ) > maxvalue
+                        if (colored == 1)
+                            % If the colored option is true, color the
+                            % julia set by the number of iterations to
+                            % converge
+                            M(r,i) = j;
+                        else
+                            % if colored option is used, then give a single
+                            % value based on convergence, independent of
+                            % the number of iterations required to converge
+                            M(r,i) = 2;
+                        end
+                        break
                     end
                 end
             end
