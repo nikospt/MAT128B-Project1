@@ -2,11 +2,8 @@
 % UC Davis Winter 2020
 % Nikos Trembois, Caitlin Brown, and Shuai Zhi
 
-global c
-c = [0.36 + 0.1i, -.123 - .745i,-.749, -1.25];
-
 %% Part 1: Fractals
-clearvars -except c
+clearvars
 phi = @(z,c) z^2;
 M = FilledJuliaSet(phi,1,1,100,0);
 
@@ -23,9 +20,10 @@ hold off
 saveas(gcf,'../Figures/UnitDisk.png')
 
 %% Part 2:  Fractals
-clearvars -except c
+clearvars
 phi = @(z,c) z^2 + c;
 xrange = 2; yrange = 2;
+c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i, -1.25];
 M = cell(length(c),1);
 for i = 1:length(c)
     M{i} = FilledJuliaSet(phi,xrange,yrange,100,c(i));
@@ -54,10 +52,11 @@ for i = 1:length(c)
 end
 
 %% Part 3: Julia Sets
-clearvars -except c
+clearvars
 psi = @(z,c) sqrt(z - c);
 x = zeros(100,4);
 y = zeros(100,4);
+c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i, -1.25];
 for k = 1:length(c)
     clear z;
     z = c(k);
@@ -96,7 +95,7 @@ end
 % FractalDimension(M{end},.02)
 
 %% Part 5: Connectivity of the Julia Set
-clearvars -except c
+clearvars
 psi = @(z) z^2 + 3;
 z = 0;
 max_iter = 1000;
@@ -114,12 +113,14 @@ end
     
 
 %% Part 6: Coloring Divergent Orbits
-clearvars -except c
+clearvars
 phi = @(z,c) z^2 - c;
-rl = -1; ru = -rl; %1.6
-il = -1;  iu = -il; %.7
+rl = -1.6; ru = -rl;
+il = -.7;  iu = -il;
 a = linspace(rl,ru,100);
 b = linspace(il,iu,100);
+c = [0.36 + 0.1i, -.123 - .745i,-.749,-.25+.25i, -1.25]; 
+%c = -1.25;
 M = cell(length(c),1);
 for k = 1:length(c)
     M{k} = ones(length(a),length(b));
@@ -144,7 +145,7 @@ for i = 1:length(c)
     axis xy
     axis equal
     ax = gca;
-    ax.XLim = [rl,-rl]; ax.YLim = [il,-il];
+    gca.Xlim([
     plot(ax.XLim,[0,0],'LineStyle','--','Color',[.5,.5,.5])
     plot([0,0],ax.YLim,'LineStyle','--','Color',[.5,.5,.5])
     xlabel('\Re','Fontsize',18)
@@ -157,7 +158,7 @@ for i = 1:length(c)
 end
 
 %% Part 7: Newton's Method in the Complex Plane
-clearvars -except c
+clearvars
 g = @(z,n) (z^n - 1)/(n*z^(n-1));
 a = linspace(-5,5,500);
 b = linspace(-5,5,500);
@@ -206,7 +207,7 @@ end
     
 
 %% Part 8: Mandelbrot Set
-clearvars -except c
+clearvars
 phi = @(z,c) z^2 + c;
 a = linspace(-1,1,100);
 b = linspace(-1,1,100);

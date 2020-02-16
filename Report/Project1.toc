@@ -1,0 +1,11 @@
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}% 
+\contentsline {section}{\numberline {2}Introduction to Fractals}{2}{section.2}% 
+\contentsline {section}{\numberline {3}Julia Set}{4}{section.3}% 
+\contentsline {section}{\numberline {4}Fractal Dimensions}{4}{section.4}% 
+\contentsline {section}{\numberline {5}Julia Set Connectivity}{4}{section.5}% 
+\contentsline {section}{\numberline {6}Divergent Orbits}{4}{section.6}% 
+\contentsline {section}{\numberline {7}Newton's Method in Complex Plane}{4}{section.7}% 
+\contentsline {section}{\numberline {8}The Mandelbrot Set}{4}{section.8}% 
+\contentsline {section}{\numberline {9}Conclusion}{4}{section.9}% 
+\contentsline {section}{\numberline {10}Appendix}{4}{section.10}% 
+\contentsline {subsection}{\numberline {10.1}Code}{4}{subsection.10.1}% 

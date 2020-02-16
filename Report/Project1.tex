@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage[ruled,vlined]{algorithm2e}
 \usepackage{mcode}
+\usepackage{subcaption}
 
 % The percent sign indicates comments and does not effect what is written to the pdf
 
@@ -54,7 +55,39 @@ The orbit of complex values whose real and imaginary part were within [-1, 1] we
 
 \Figure{../Figures/UnitDisk.png}{Orbit of z under $\phi=z^2$}{fig:unitDisk}
 
+By adding a constant to the function, fractals occur. 
+
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{../Figures/FilledJulia1.png}
+		\caption{Filled Julia Set of $z = 0.36 + 0.1i$}
+		\label{fig:FJ+.36+.1i}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{../Figures/FilledJulia2.png}
+		\caption{Filled Julia Set of $z = -0.123 + 0.745i$}
+		\label{fig:FJ+.123+.745i}
+	\end{subfigure}
+	
+	\vskip\baselineskip
+	
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{../Figures/FilledJulia3.png}
+		\caption{Filled Julia Set of $z = - 0.749$}
+		\label{fig:-.749}
+	\end{subfigure}
+	\begin{subfigure}[b]{0.49\textwidth}
+		\includegraphics[width=\textwidth]{../Figures/FilledJulia4.png}
+		\caption{Filled Julia Set of $z = -1.25$}
+		\label{fig:FJ-1.25}
+	\end{subfigure}
+	\caption{Filled Julia Sets with 100 points in real and imaginary axis}
+	\label{fig:FJwithC}
+\end{figure}
+
 \section{Julia Set}
+Figure \ref{fig:FJ+.36+.1i}
 
 \section{Fractal Dimensions}
 
@@ -63,6 +96,37 @@ The orbit of complex values whose real and imaginary part were within [-1, 1] we
 \section{Divergent Orbits}
 
 \section{Newton's Method in Complex Plane}
+Root finding can be a surprisingly difficult task. The linear case is trivial and roots of second order polynomials are solved with the quadratic equation. However, as the order increases the analytic equations to solve for the roots become more intricate and no known analytic equation exists for polynomials of orders higher than 6. Not to mention, this is just for real functions! Finding the roots of complex functions is even more difficult. Fortunately iterative methods, with the help of plots, simplify the process; although, some accuracy will be lost. The plots in figure \ref{fig:NI} are not just interesting, but also insightful. When plotting the Newton fractals and coloring the points with the number of iterations required to converge, the location of the roots become evident. For Newton's method, and any iterative method I can think of, the closer an initial guess is to a root, the less iterations are required. So the roots are found where the plots indicate the least amount of iterations are, in this case dark blue. Looking at figure \ref{fig:NI3} it appears the roots around $(1,0i), (-0.5,0.86i), (0.5,-0.86i)$. This agrees with the known values of $(1,0i), (-0.5, \frac{\sqrt{3}}{2}i), (-0.5, -\frac{\sqrt{3}}{2}i)$. The process extends to all subfigures in figure \ref{fig:NI} and to any complex function whose roots are desired.
+
+\def\fwidth{0.49\textwidth}
+\begin{figure}
+\centering
+	\begin{subfigure}[b]{\fwidth}
+		\includegraphics[width=\textwidth]{../Figures/Newton1.png}
+		\caption{Iterations to roots of $z^2 - 1$}
+		\label{fig:NI2}
+	\end{subfigure}
+	\begin{subfigure}[b]{\fwidth}
+		\includegraphics[width=\textwidth]{../Figures/Newton2.png}
+		\caption{Iterations to roots of $z^3 - 1$}
+		\label{fig:NI3}
+	\end{subfigure}
+	
+	\vskip\baselineskip
+	
+	\begin{subfigure}[b]{\fwidth}
+		\includegraphics[width=\textwidth]{../Figures/Newton3.png}
+		\caption{Iterations to roots of $z^4 - 1$}
+		\label{fig:NI4}
+	\end{subfigure}
+	\begin{subfigure}[b]{\fwidth}
+		\includegraphics[width=\textwidth]{../Figures/Newton4.png}
+		\caption{Iterations to roots of $z^5 - 1$}
+		\label{fig:NI5}
+	\end{subfigure}
+	\caption{Roots of complex functions of form $z^n - 1$}
+	\label{fig:NI}
+\end{figure}
 
 \section{The Mandelbrot Set}
 
