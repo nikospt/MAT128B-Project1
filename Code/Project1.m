@@ -7,9 +7,9 @@ clc; close all; clearvars
 global c xRange yRange pts bsave
 % Constants that will be used for z^2 - c plots
 c = [0.36 + 0.1i, -.123 - .745i,-.749, -1.25];
-xRange = [1, 1, 1, 1.6]; % Range of x values for plotting window
-yRange = [1, 1, 1, 0.7]; % Range of y values for plotting window
-pts = 100; % Number of points in x and y directions of plot
+xRange = [0.9, 1.25, 1.5, 1.6]; % Range of x values for plotting window
+yRange = [1.25, 1.1, 1, 0.7]; % Range of y values for plotting window
+pts = 500; % Number of points in x and y directions of plot
 bsave = 0; % boolean value (0,1) to save plots to file or not
 
 %% Part 1: Fractals
@@ -18,7 +18,6 @@ phi = @(z,c) z^2; % Defining the function
 M = FilledJuliaSet(phi,1,1,pts,0,'nocolor',2);
 
 figure(); hold on
-%title('Filled Julia Set of $\phi = z^2$','Fontsize',16,'Interpreter','Latex')
 xlabel('\Re','Fontsize',18); ylabel('\Im','Fontsize',18)
 colormap([1 0 0; 1 1 1]); 
 image( [-1 1], [-1 1], M')
@@ -33,22 +32,15 @@ clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2 + c;
 M = cell(length(c),1);
 for i = 1:length(c)
-    M{i} = FilledJuliaSet(phi,xRange(1),yRange(1),pts,c(i),'nocolor',2);
+    M{i} = FilledJuliaSet(phi,xRange(i),yRange(i),pts,c(i),'nocolor',2);
 end
 
 % Plotting the maps of orbits
 for i = 1:length(c)
     figure(); hold on
-    % Generate the title string based on constant value
-    if (real(c(i)) > 0 )
-        stitle = strcat('Filled Julia Set of $z^2 + ',num2str(c(i)),'$');
-    else
-        stitle = strcat('Filled Julia Set of $z^2 ',num2str(c(i)),'$');
-    end
-    %title(stitle,'Interpreter','Latex','FontSize',24) % Create Title
     colormap([1 0 0; 1 1 1]); % Define colors for map
-    image( [-xRange(i) xRange(i)], [-yRange(i) yRange(i)], M{i}') % create map
-    axis xy; axis equal; ax = gca;
+    image( [-xRange(i) xRange(i)], [-yRange(i) yRange(i)], M{i}')
+    axis xy; axis equal; ax = gca; % Formatting below
     ax.XLim = [-xRange(i) xRange(i)]; ax.YLim = [-yRange(i) yRange(i)];
     plot(ax.XLim,[0,0],'LineStyle','--','Color',[.5,.5,.5])
     plot([0,0],ax.YLim,'LineStyle','--','Color',[.5,.5,.5])
@@ -90,16 +82,8 @@ end
 % Plot the Julia sets for different constant values
 for i = 1:length(c)
     figure(); hold on
-    % Generate the title string based on constant value
-    if (real(c(i)) > 0 )
-        stitle = strcat('Julia Set of $z^2 + ',num2str(c(i)),'$');
-    else
-        stitle = strcat('Julia Set of $z^2 ',num2str(c(i)),'$');
-    end
-    %title(stitle,'Interpreter','Latex','FontSize',24) % Create title
     scatter(x(:,i),y(:,i),'filled') % Plot the Julia Set
-    % Plot Formatting
-    ax = gca;
+    ax = gca; % Plot formatting below
     plot(ax.XLim,[0,0],'LineStyle','--','Color',[.5,.5,.5])
     plot([0,0],ax.YLim,'LineStyle','--','Color',[.5,.5,.5])
     xlabel('\Re','Fontsize',18); ylabel('\Im','Fontsize',18)
@@ -121,7 +105,7 @@ for i = 1:length(c)
 end
 % Calculating the fractal dimension
 for i = 1:length(c)
-    r = 2*range/pts; % calculate result
+    r = 2*range/pts; % calculate resolution
     fprintf('For c = (%4.2f, %4.2fi)',real(c(i)),imag(c(i)))
     FractalDimension(M{i},r)
 end
@@ -158,8 +142,7 @@ for i = 1:length(c)
     figure(); hold on
     % plot map of diverging orbits
     image( [-xRange(i) xRange(i)], [-yRange(i) yRange(i)], M{i}')
-    % Plot formatting below
-    axis xy; axis equal; ax = gca;
+    axis xy; axis equal; ax = gca; % Plot formatting below
     ax.XLim = [-xRange(i) xRange(i)]; ax.YLim = [-yRange(i) yRange(i)];
     plot(ax.XLim,[0,0],'LineStyle','--','Color',[.5,.5,.5])
     plot([0,0],ax.YLim,'LineStyle','--','Color',[.5,.5,.5])
@@ -200,19 +183,14 @@ for n = 2:nmax % start with order 2 as order 1 is not interesting
 end
 
 % Plotting the Newton iterations
-stitle1 = 'Fixed points of';
 for i = 1:nmax-1
     figure(); hold on
-    % Creating title string
-    stitle2 = strcat( ' $z^',num2str(i+1),' - 1$');
-    % title(strcat(stitle1,stitle2),'Interpreter','Latex')
     % Plotting map of iterations of convergence
     image( [min(a) max(a)], [min(b) max(b)], M{i}')
-    % Plot formatting
-    colormap(jet(max(max(M{i})))); colorbar
-    axis xy; axis equal; ax = gca;
+    axis xy; axis equal; ax = gca; % Plot formatting below
     ax.XLim = [min(a) max(a)]; ax.YLim = [min(b) max(b)];
     xlabel('\Re','Fontsize',18); ylabel('\Im','Fontsize',18)
+    colormap(jet(max(max(M{i})))); colorbar
     hold off
     if bsave == 1 % Save plot to file if bsave = 1
         ssave = strcat('../Figures/Newton',num2str(i),'.png');
@@ -244,7 +222,6 @@ end
 
 % Plot Mandelbrot set
 figure(); hold on
-% title('Mandelbrot Set')
 xlabel('Real'); ylabel('Imaginary')
 colormap(jet(100)); colorbar
 image( [-1 1], [-1 1], M')
@@ -252,55 +229,8 @@ axis xy; axis equal; axis([ -1 1 -1 1])
 if bsave == 1 % Save plot to file if bsave = 1
     saveas(gcf,'../Figures/Mandelbrot.png')
 end
-%% Part 8 (cont) Zoom in
-% zoom in on a fractal by changing limits
-% clear M;
-% phi = @(z,c) z^2 + c;
-% a = linspace(-.3,0.05,pts);
-% b = linspace(0.6,1,pts);
-% M = ones(length(a),length(b));
-% 
-% for r = 1:length(a)
-%     for i = 1:length(b)
-%         z = 0;
-%         cm = a(r) + b(i)*1i;
-%         for j = 1:100
-%             z = phi(z,cm);
-%             if abs(z) > 100
-%                 M(r,i) = j;
-%                 break;
-%             end
-%         end
-%     end
-% end
-% 
-% figure(); hold on
-% %title('Mandelbrot Set')
-% xlabel('Real'); ylabel('Imaginary')
-% colormap(jet(100)); colorbar
-% image( [min(a) max(a)], [min(b) max(b)], M')
-% axis xy; axis('equal')
 
 %% Functions
-function [result] = R(x,y)
-    result = sqrt(x^2 + y^2);
-end
-
-function [result] = T(x,y)
-    if x > 0
-        t = atan(y/x);
-    elseif x == 0
-        if y > 0
-            t = pi/2;
-        else
-            t = 3*pi/2;
-        end
-    else
-        t = atan(y/x) + pi;
-    end
-    result = t;
-end
-
 function FractalDimension(M,r)
     n = length(M);
     N = 0; % Initialize value of N for box-counting
