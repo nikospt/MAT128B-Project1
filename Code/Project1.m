@@ -75,7 +75,7 @@ y = zeros(pts,length(c)); % initialize a y vector for each constant
 for k = 1:length(c)
     clear z;
     z = c(k);
-    for j = 1:1000 % Use 1,000 iterations
+    for j = 1:10000 % Use 10,000 iterations
         x(j,k) = real(z(j));
         y(j,k) = imag(z(j));
         % Randomly choose positive or negative root with equal weighting
@@ -117,7 +117,7 @@ phi = @(z,c) z^2 + c;
 range = 2; % define a range used for both x and y, for square spacing
 M = cell(length(c),1);
 for i = 1:length(c)
-    M{i} = FilledJuliaSet(phi,range,range,200,c(i),'nocolor',2);
+    M{i} = FilledJuliaSet(phi,range,range,pts,c(i),'nocolor',2);
 end
 % Calculating the fractal dimension
 for i = 1:length(c)
@@ -150,7 +150,7 @@ for i = 1:length(c)
     % Once again using the FilledJuliaSet function is used with options 
     % 'colored' to color plots based on iterations to diverge
     % past an absolute value of 100
-    M{i} = FilledJuliaSet(phi, xRange(i), yRange(i), 200, c(i), 'colored', 100);
+    M{i} = FilledJuliaSet(phi, xRange(i), yRange(i), pts, c(i), 'colored', 100);
 end
 
 % Plotting the Diverging orbits
@@ -224,8 +224,8 @@ end
 %% Part 8: Mandelbrot Set
 clearvars -except c xRange yRange pts bsave
 phi = @(z,c) z^2 + c; % function to plot
-a = linspace(-1,1,500); % Plotting Window
-b = linspace(-1,1,500);
+a = linspace(-1,1,pts); % Plotting Window
+b = linspace(-1,1,pts);
 M = ones(length(a),length(b));
 
 for r = 1:length(a)
@@ -250,36 +250,36 @@ colormap(jet(100)); colorbar
 image( [-1 1], [-1 1], M')
 axis xy; axis equal; axis([ -1 1 -1 1])
 if bsave == 1 % Save plot to file if bsave = 1
-    saveas(gcf,'../Figures/Madelbrot.png')
+    saveas(gcf,'../Figures/Mandelbrot.png')
 end
 %% Part 8 (cont) Zoom in
 % zoom in on a fractal by changing limits
-clear M;
-phi = @(z,c) z^2 + c;
-a = linspace(-.3,0.05,500);
-b = linspace(0.6,1,500);
-M = ones(length(a),length(b));
-
-for r = 1:length(a)
-    for i = 1:length(b)
-        z = 0;
-        cm = a(r) + b(i)*1i;
-        for j = 1:100
-            z = phi(z,cm);
-            if abs(z) > 100
-                M(r,i) = j;
-                break;
-            end
-        end
-    end
-end
-
-figure(); hold on
-%title('Mandelbrot Set')
-xlabel('Real'); ylabel('Imaginary')
-colormap(jet(100)); colorbar
-image( [min(a) max(a)], [min(b) max(b)], M')
-axis xy; axis('equal')
+% clear M;
+% phi = @(z,c) z^2 + c;
+% a = linspace(-.3,0.05,pts);
+% b = linspace(0.6,1,pts);
+% M = ones(length(a),length(b));
+% 
+% for r = 1:length(a)
+%     for i = 1:length(b)
+%         z = 0;
+%         cm = a(r) + b(i)*1i;
+%         for j = 1:100
+%             z = phi(z,cm);
+%             if abs(z) > 100
+%                 M(r,i) = j;
+%                 break;
+%             end
+%         end
+%     end
+% end
+% 
+% figure(); hold on
+% %title('Mandelbrot Set')
+% xlabel('Real'); ylabel('Imaginary')
+% colormap(jet(100)); colorbar
+% image( [min(a) max(a)], [min(b) max(b)], M')
+% axis xy; axis('equal')
 
 %% Functions
 function [result] = R(x,y)
