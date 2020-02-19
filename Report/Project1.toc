@@ -2,11 +2,11 @@
 \contentsline {section}{\numberline {2}Unit Disk}{2}{section.2}%
 \contentsline {section}{\numberline {3}Introduction to Fractals}{3}{section.3}%
 \contentsline {section}{\numberline {4}Julia Set}{3}{section.4}%
-\contentsline {section}{\numberline {5}Fractal Dimensions}{5}{section.5}%
-\contentsline {section}{\numberline {6}Julia Set Connectivity}{5}{section.6}%
+\contentsline {section}{\numberline {5}Fractal Dimensions}{4}{section.5}%
+\contentsline {section}{\numberline {6}Julia Set Connectivity}{4}{section.6}%
 \contentsline {section}{\numberline {7}Divergent Orbits}{5}{section.7}%
-\contentsline {section}{\numberline {8}Newton's Method in Complex Plane}{5}{section.8}%
-\contentsline {section}{\numberline {9}The Mandelbrot Set}{8}{section.9}%
-\contentsline {section}{\numberline {10}Conclusion}{8}{section.10}%
-\contentsline {section}{\numberline {11}Appendix}{9}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Code}{9}{subsection.11.1}%
+\contentsline {section}{\numberline {8}Newton's Method in Complex Plane}{6}{section.8}%
+\contentsline {section}{\numberline {9}The Mandelbrot Set}{6}{section.9}%
+\contentsline {section}{\numberline {10}Conclusion}{6}{section.10}%
+\contentsline {section}{\numberline {11}Appendix}{8}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Code}{8}{subsection.11.1}%

@@ -51,7 +51,7 @@
 In this project, numerical analysis is used to understand and demonstrate fractals and their characteristics. The fractals will be generated from the orbits of complex functions. Orbits are the sequence of numbers that results from the process of applying a function to the output of the same function over and over, like a recursive function. So $orb(z_0) = z_0, z_1 = \phi(z_0), z_2 \phi(\phi(z_0)) ...$ is the orbit of the initial point $z_0$ under the function $\phi$. It is not hard to imagine that for certain initial values this process will diverge while other initial values will converge, or at least remain bounded by some value. The filled Julia set is all points whose orbit, using a polynomial function, remains bounded. The boundary of the filled set is called the Julia set.
 
 \section{Unit Disk}
-The orbit of complex values whose real and imaginary part were within [-1, 1] were calculated for the function $\phi(z) = z^2$. The filled Julia set of $\phi(z) = z^2$, shown in figure \ref{fig:unitDisk}, shows the map the orbit, which is the unit disk. Under the same conditions the Julia set would create the unit circle, as it is the boundary of the filled Julia set. 
+The orbit of complex values whose real and imaginary part were within [-1, 1] were calculated for the function $\phi(z) = z^2$. The filled Julia set is the map of the complex plane to its orbit under some function. The filled Julia set under $\phi(z) = z^2$ is the unit disk and is shown in figure \ref{fig:unitDisk}. Under the same function the Julia set would create the unit circle, as it is the boundary of the filled Julia set. 
 
 \begin{figure}
 	\centering
@@ -88,12 +88,12 @@ The unit disk is a great illustration of the orbit of different initial points u
 		\caption{Filled Julia Set of $z = -1.25$}
 		\label{fig:FJ-1.25}
 	\end{subfigure}
-	\caption{Filled Julia sets with 100 points in real and imaginary axis}
+	\caption{Filled Julia sets with 500 points in real and imaginary axis}
 	\label{fig:FJwithC}
 \end{figure}
 
 \section{Julia Set}
-The Julia set shows is the boundary of the filled Julia set. So, it marks the edge of the points whose orbits converge under a given function. All points inside the outline converge, including the line, while those outside of it diverge. The Julia set is found using the inverse iteration method, which is an attractor. 
+The Julia set is the boundary of the filled Julia set. So, it marks the edge of the points whose orbits converge under a given function. All points inside the boundary converge, including the line, while those outside of it diverge. The Julia set is found using the inverse iteration method, which is an attractor. As the name suggests, initial points will be attracted to certain values as it is iterated. In fact, the plots below are examples of a specific type of attractor called strange attractors. This is because the attractor maps to a fractal shape. Since the Julia set uses inverse function, $\phi = z^2 + c$ becomes  $\psi = \sqrt{z - c}$. Due to the square root, any given iteration is actually attracted to two different values, one begin the negative root and the other the positive, which are chosen at random.
 
 \begin{figure}
 \centering
@@ -158,7 +158,7 @@ The number of iterations it takes for a value to diverge creates interesting plo
 		\label{fig:CJ-1.25}
 	\end{subfigure}
 	\caption{Filled Julia sets colored based on number of iterations to converge}
-	\label{fig:FJwithC}
+	\label{fig:CJwithC}
 \end{figure}
 
 \section{Newton's Method in Complex Plane}
