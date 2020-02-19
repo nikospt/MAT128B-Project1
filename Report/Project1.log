@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.12.8)  18 FEB 2020 20:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/W32TeX) (preloaded format=pdflatex 2019.12.8)  19 FEB 2020 09:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -535,30 +535,30 @@ Package caption Info: listings package is loaded.
 ) (./Project1.aux)
 \openout1 = `Project1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 40.
-LaTeX Font Info:    ... okay on input line 40.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 40.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 4
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
 0.
 
 (c:/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 40.
+LaTeX Font Info:    ... okay on input line 10.
 \AtBeginShipoutBox=\box39
-Package hyperref Info: Link coloring OFF on input line 40.
+Package hyperref Info: Link coloring OFF on input line 10.
 
 (c:/texlive/2019/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -571,9 +571,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count128
 )
-LaTeX Info: Redefining \ref on input line 40.
-LaTeX Info: Redefining \pageref on input line 40.
-LaTeX Info: Redefining \nameref on input line 40.
+LaTeX Info: Redefining \ref on input line 10.
+LaTeX Info: Redefining \pageref on input line 10.
+LaTeX Info: Redefining \nameref on input line 10.
 
 (c:/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -607,156 +607,156 @@ Package caption Info: End \AtBeginDocument code.
 
  [1
 
-{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<../Figures/UnitDisk.png, id=40, 421.575pt x 316.0608pt>
+{c:/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
+<../Figures/UnitDisk.png, id=48, 421.575pt x 316.0608pt>
 File: ../Figures/UnitDisk.png Graphic file (type png)
 <use ../Figures/UnitDisk.png>
-Package pdftex.def Info: ../Figures/UnitDisk.png  used on input line 58.
+Package pdftex.def Info: ../Figures/UnitDisk.png  used on input line 32.
 (pdftex.def)             Requested size: 252.94499pt x 189.63794pt.
- [2 <../Figures/UnitDisk.png (PNG copy)>]
 <../Figures/FilledJulia1.png, id=49, 421.575pt x 316.0608pt>
 File: ../Figures/FilledJulia1.png Graphic file (type png)
 <use ../Figures/FilledJulia1.png>
-Package pdftex.def Info: ../Figures/FilledJulia1.png  used on input line 69.
+Package pdftex.def Info: ../Figures/FilledJulia1.png  used on input line 43.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
 <../Figures/FilledJulia2.png, id=50, 421.575pt x 316.0608pt>
 File: ../Figures/FilledJulia2.png Graphic file (type png)
 <use ../Figures/FilledJulia2.png>
-Package pdftex.def Info: ../Figures/FilledJulia2.png  used on input line 74.
+Package pdftex.def Info: ../Figures/FilledJulia2.png  used on input line 48.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
 <../Figures/FilledJulia3.png, id=51, 421.575pt x 316.0608pt>
 File: ../Figures/FilledJulia3.png Graphic file (type png)
 <use ../Figures/FilledJulia3.png>
-Package pdftex.def Info: ../Figures/FilledJulia3.png  used on input line 82.
+Package pdftex.def Info: ../Figures/FilledJulia3.png  used on input line 56.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
 <../Figures/FilledJulia4.png, id=52, 421.575pt x 316.0608pt>
 File: ../Figures/FilledJulia4.png Graphic file (type png)
 <use ../Figures/FilledJulia4.png>
-Package pdftex.def Info: ../Figures/FilledJulia4.png  used on input line 87.
+Package pdftex.def Info: ../Figures/FilledJulia4.png  used on input line 61.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
- [3 <../Figures/FilledJulia1.png (PNG copy)> <../Figures/FilledJulia2.png (PNG 
-copy)> <../Figures/FilledJulia3.png (PNG copy)> <../Figures/FilledJulia4.png (P
-NG copy)>]
-<../Figures/Julia1.png, id=58, 421.575pt x 316.0608pt>
+ [3 <../Figures/UnitDisk.png (PNG copy)>] [4 <../Figures/FilledJulia1.png (PNG 
+copy)> <../Figures/FilledJulia2.png (PNG copy)> <../Figures/FilledJulia3.png (P
+NG copy)> <../Figures/FilledJulia4.png (PNG copy)>]
+<../Figures/Julia1.png, id=63, 421.575pt x 316.0608pt>
 File: ../Figures/Julia1.png Graphic file (type png)
 <use ../Figures/Julia1.png>
-Package pdftex.def Info: ../Figures/Julia1.png  used on input line 101.
+Package pdftex.def Info: ../Figures/Julia1.png  used on input line 75.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Julia2.png, id=59, 421.575pt x 316.0608pt>
+<../Figures/Julia2.png, id=64, 421.575pt x 316.0608pt>
 File: ../Figures/Julia2.png Graphic file (type png)
 <use ../Figures/Julia2.png>
-Package pdftex.def Info: ../Figures/Julia2.png  used on input line 106.
+Package pdftex.def Info: ../Figures/Julia2.png  used on input line 80.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Julia3.png, id=60, 421.575pt x 316.0608pt>
+<../Figures/Julia3.png, id=65, 421.575pt x 316.0608pt>
 File: ../Figures/Julia3.png Graphic file (type png)
 <use ../Figures/Julia3.png>
-Package pdftex.def Info: ../Figures/Julia3.png  used on input line 114.
+Package pdftex.def Info: ../Figures/Julia3.png  used on input line 88.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Julia4.png, id=61, 421.575pt x 316.0608pt>
+<../Figures/Julia4.png, id=66, 421.575pt x 316.0608pt>
 File: ../Figures/Julia4.png Graphic file (type png)
 <use ../Figures/Julia4.png>
-Package pdftex.def Info: ../Figures/Julia4.png  used on input line 119.
+Package pdftex.def Info: ../Figures/Julia4.png  used on input line 93.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
- [4 <../Figures/Julia1.png (PNG copy)> <../Figures/Julia2.png (PNG copy)> <../F
-igures/Julia3.png (PNG copy)> <../Figures/Julia4.png (PNG copy)>]
-<../Figures/ColoredJulia1.png, id=67, 421.575pt x 316.0608pt>
+ [5 <../Figures/Julia1.png (PNG copy)> <../Figures/Julia2.png (PNG copy)> <../F
+igures/Julia3.png (PNG copy)> <../Figures/Julia4.png (PNG copy)>] [6]
+<../Figures/ColoredJulia1.png, id=77, 421.575pt x 316.0608pt>
 File: ../Figures/ColoredJulia1.png Graphic file (type png)
 <use ../Figures/ColoredJulia1.png>
-Package pdftex.def Info: ../Figures/ColoredJulia1.png  used on input line 138.
+Package pdftex.def Info: ../Figures/ColoredJulia1.png  used on input line 113.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/ColoredJulia2.png, id=68, 421.575pt x 316.0608pt>
+<../Figures/ColoredJulia2.png, id=78, 421.575pt x 316.0608pt>
 File: ../Figures/ColoredJulia2.png Graphic file (type png)
 <use ../Figures/ColoredJulia2.png>
-Package pdftex.def Info: ../Figures/ColoredJulia2.png  used on input line 143.
+Package pdftex.def Info: ../Figures/ColoredJulia2.png  used on input line 118.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/ColoredJulia3.png, id=69, 421.575pt x 316.0608pt>
+<../Figures/ColoredJulia3.png, id=79, 421.575pt x 316.0608pt>
 File: ../Figures/ColoredJulia3.png Graphic file (type png)
 <use ../Figures/ColoredJulia3.png>
-Package pdftex.def Info: ../Figures/ColoredJulia3.png  used on input line 151.
+Package pdftex.def Info: ../Figures/ColoredJulia3.png  used on input line 126.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/ColoredJulia4.png, id=70, 421.575pt x 316.0608pt>
+<../Figures/ColoredJulia4.png, id=80, 421.575pt x 316.0608pt>
 File: ../Figures/ColoredJulia4.png Graphic file (type png)
 <use ../Figures/ColoredJulia4.png>
-Package pdftex.def Info: ../Figures/ColoredJulia4.png  used on input line 156.
+Package pdftex.def Info: ../Figures/ColoredJulia4.png  used on input line 131.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
- [5 <../Figures/ColoredJulia1.png (PNG copy)> <../Figures/ColoredJulia2.png (PN
+ [7 <../Figures/ColoredJulia1.png (PNG copy)> <../Figures/ColoredJulia2.png (PN
 G copy)> <../Figures/ColoredJulia3.png (PNG copy)> <../Figures/ColoredJulia4.pn
 g (PNG copy)>]
-<../Figures/Newton1.png, id=79, 421.575pt x 316.0608pt>
+<../Figures/Newton1.png, id=90, 421.575pt x 316.0608pt>
 File: ../Figures/Newton1.png Graphic file (type png)
 <use ../Figures/Newton1.png>
-Package pdftex.def Info: ../Figures/Newton1.png  used on input line 171.
+Package pdftex.def Info: ../Figures/Newton1.png  used on input line 146.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Newton2.png, id=80, 421.575pt x 316.0608pt>
+<../Figures/Newton2.png, id=91, 421.575pt x 316.0608pt>
 File: ../Figures/Newton2.png Graphic file (type png)
 <use ../Figures/Newton2.png>
-Package pdftex.def Info: ../Figures/Newton2.png  used on input line 176.
+Package pdftex.def Info: ../Figures/Newton2.png  used on input line 151.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Newton3.png, id=81, 421.575pt x 316.0608pt>
+<../Figures/Newton3.png, id=92, 421.575pt x 316.0608pt>
 File: ../Figures/Newton3.png Graphic file (type png)
 <use ../Figures/Newton3.png>
-Package pdftex.def Info: ../Figures/Newton3.png  used on input line 184.
+Package pdftex.def Info: ../Figures/Newton3.png  used on input line 159.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Newton4.png, id=82, 421.575pt x 316.0608pt>
+<../Figures/Newton4.png, id=93, 421.575pt x 316.0608pt>
 File: ../Figures/Newton4.png Graphic file (type png)
 <use ../Figures/Newton4.png>
-Package pdftex.def Info: ../Figures/Newton4.png  used on input line 189.
+Package pdftex.def Info: ../Figures/Newton4.png  used on input line 164.
 (pdftex.def)             Requested size: 176.40198pt x 132.25272pt.
-<../Figures/Mandelbrot.png, id=83, 421.575pt x 316.0608pt>
+ [8 <../Figures/Newton1.png (PNG copy)> <../Figures/Newton2.png (PNG copy)> <..
+/Figures/Newton3.png (PNG copy)> <../Figures/Newton4.png (PNG copy)>]
+<../Figures/Mandelbrot.png, id=101, 421.575pt x 316.0608pt>
 File: ../Figures/Mandelbrot.png Graphic file (type png)
 <use ../Figures/Mandelbrot.png>
-Package pdftex.def Info: ../Figures/Mandelbrot.png  used on input line 201.
+Package pdftex.def Info: ../Figures/Mandelbrot.png  used on input line 177.
 (pdftex.def)             Requested size: 252.94499pt x 189.63794pt.
- [6] [7 <../Figures/Newton1.png (PNG copy)> <../Figures/Newton2.png (PNG copy)>
- <../Figures/Newton3.png (PNG copy)> <../Figures/Newton4.png (PNG copy)>]
+ [9 <../Figures/Mandelbrot.png (PNG copy)>] [10]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 214.
-LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 2
-14.
-
-(c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+nput line 190.
+LaTeX Font Info:    Trying to load font information for OT1+pcr on input line 1
+90.
+ (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) (../Code/Project1.m
+)
+(../Code/Project1.m
 LaTeX Font Info:    Trying to load font information for TS1+pcr on input line 1
 8.
-
-(c:/texlive/2019/texmf-dist/tex/latex/psnfss/ts1pcr.fd
+ (c:/texlive/2019/texmf-dist/tex/latex/psnfss/ts1pcr.fd
 File: ts1pcr.fd 2001/06/04 font definitions for TS1/pcr.
-) [8 <../Figures/Mandelbrot.png (PNG copy)>]
+)
 LaTeX Font Info:    Trying to load font information for OMS+pcr on input line 2
 1.
- (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omspcr.fd
+
+(c:/texlive/2019/texmf-dist/tex/latex/psnfss/omspcr.fd
 File: omspcr.fd 
 )
 LaTeX Font Info:    Font shape `OMS/pcr/m/n' in size <9> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
-
-[9] [10]
+ [11] [12]
 LaTeX Font Info:    Trying to load font information for OML+pcr on input line 1
-20.
- (c:/texlive/2019/texmf-dist/tex/latex/psnfss/omlpcr.fd
+22.
+
+(c:/texlive/2019/texmf-dist/tex/latex/psnfss/omlpcr.fd
 File: omlpcr.fd 
 )
 LaTeX Font Info:    Font shape `OML/pcr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 120.
- [11] [12]
-[13])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
- [14]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 122.
+ [13] [14] [15] [16])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
+
+[17]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 195.
  (./Project1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 216.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 195.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 195.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
  ) 
 Here is how much of TeX's memory you used:
- 11366 strings out of 492164
- 168666 string characters out of 6129103
- 431559 words of memory out of 5000000
- 15229 multiletter control sequences out of 15000+600000
+ 11372 strings out of 492164
+ 168744 string characters out of 6129103
+ 440542 words of memory out of 5000000
+ 15228 multiletter control sequences out of 15000+600000
  12099 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 46i,8n,46p,1391b,1887s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 46i,8n,46p,1634b,1883s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2019/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2019/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmbx12.pfb><c:/texlive/2019/texmf-dist/fonts/type1
@@ -770,10 +770,10 @@ nts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/p
 ublic/amsfonts/cm/cmsy10.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/ams
 fonts/cm/cmsy8.pfb><c:/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/c
 msy9.pfb><c:/texlive/2019/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on Project1.pdf (14 pages, 1035131 bytes).
+Output written on Project1.pdf (17 pages, 1075851 bytes).
 PDF statistics:
- 565 PDF objects out of 1000 (max. 8388607)
- 511 compressed objects within 6 object streams
- 315 named destinations out of 1000 (max. 500000)
+ 582 PDF objects out of 1000 (max. 8388607)
+ 525 compressed objects within 6 object streams
+ 322 named destinations out of 1000 (max. 500000)
  187 words of extra memory for PDF output out of 10000 (max. 10000000)
 

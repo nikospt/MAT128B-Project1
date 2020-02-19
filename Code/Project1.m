@@ -112,19 +112,22 @@ end
 
 %% Part 5: Connectivity of the Julia Set
 clearvars -except c xRange yRange pts bsave
-psi = @(z) z^2 + 3; % Calculate inverse iteration undder some function psi
-z = 0; % Initialize value
 max_iter = 1000; % Use 1000 iterations to determine if orbit diverges
-for i = 1:max_iter
-    z = psi(z); % Calculate the orbit
-    if abs(z) > 100 % Considered divergent when magnitude is greater than 100
-        fprintf('The orbit diverged after %i iterations, the set is not connected\n',i)
-        break
+for k = 1:length(c)
+    psi = @(z) z^2 + c(k);
+    fprintf('For c = (%4.2f, %4.2f)',real(c(k)),imag(c(k)))
+    z = 0; % Initialize value
+    for i = 1:max_iter
+        z = psi(z); % Calculate the orbit
+        if abs(z) > 100 % Considered divergent when magnitude is greater than 100
+            fprintf('The orbit diverged after %i iterations, the set is not connected\n',i)
+            break
+        end
     end
-end
-if abs(z) < 100
-    fprintf('The set did not diverge after %i iterations\n',max_iter)
-    fprintf('It is reasonable to assume the Julia set is connected\n')
+    if abs(z) < 100
+        fprintf('The set did not diverge after %i iterations\n',max_iter)
+        fprintf('It is reasonable to assume the Julia set is connected\n')
+    end
 end
     
 %% Part 6: Coloring Divergent Orbits
@@ -158,7 +161,7 @@ end
 clearvars -except c xRange yRange pts bsave
 % Defining function that represents f/f' for a general f = z^n - 1
 g = @(z,n) (z^n - 1)/(n*z^(n-1));
-a = linspace(-5,5,500); b = linspace(-5,5,500); % set plottig window
+a = linspace(-2,2,500); b = linspace(-2,2,500); % set plottig window
 nmax = 5; % The maximum polynomial order to plot to
 M = cell(nmax-1,1);
 for n = 2:nmax % start with order 2 as order 1 is not interesting
